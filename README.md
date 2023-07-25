@@ -26,4 +26,6 @@ streamlit run timestream.py
 ```
 
 ## Cloud deployment
-For 
+For deployment on the cloud go to https://streamlit.io/cloud and register.
+
+Create on "New App from existing region" and select your repo and file. Then under "Advanced settings" add your secrets. Done!

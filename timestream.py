@@ -10,6 +10,7 @@ def main():
         'timestream-query',    
         aws_access_key_id=st.secrets['AWS']['ACCESS_KEY'],
         aws_secret_access_key=st.secrets['AWS']['SECRET_ACCESS_KEY'],
+        region_name=st.secrets['AWS']['REGION'] if 'REGION' in st.secrets['AWS'] else 'eu-west-1'
     )
 
     first = True
