@@ -42,10 +42,23 @@ def main():
         container.altair_chart(altair.Chart(data).mark_line().encode(
             x='timestamp:T',
             y= st.secrets['TIMESTREAM']['MEASURE_NAME'] + ':Q'
-        ).interactive())
+        ).interactive(), use_container_width=True)
 
         time.sleep(2)
 
 if __name__ == '__main__':
-    st.set_page_config(page_title="s3 Example", layout="wide")
+    st.set_page_config(page_title="Timestream Example", layout="centered")
+
+    st.markdown(
+        "<h1 style='text-align: center; color: black;'>Welcome to the Timestream Example</h1>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<p style='text-align: center; color: grey;'>powered by Digital Stack Program🚀</p>",
+        unsafe_allow_html=True,
+    )
+    st.write("---")
+    st.markdown(
+        "This is a demo shows how Streamlit can interact with AWS Timestream."
+    )
     main()

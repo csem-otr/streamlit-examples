@@ -29,7 +29,21 @@ def get_file(s3_filename):
         st.write(l)
 
 def main():
-    fl = st.sidebar.file_uploader('Upload new pdf file:', type='pdf', accept_multiple_files=False)
+    st.markdown(
+        "<h1 style='text-align: center; color: black;'>Welcome to the S3 Example</h1>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        "<p style='text-align: center; color: grey;'>powered by Digital Stack Program🚀</p>",
+        unsafe_allow_html=True,
+    )
+    st.write("---")
+    st.markdown(
+        "This is a demo shows how Streamlit can interact with an S3 Bucket."
+    )
+
+
+    fl = st.sidebar.file_uploader('Upload new file:', accept_multiple_files=False)
 
     if fl is not None:
         save_file(fl)
